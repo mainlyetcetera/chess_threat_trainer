@@ -1,0 +1,11 @@
+{
+  "name": "chess_threat_trainer",
+  "version": "0.1.0",
+  "description": "app to train chess players on seeing atks and defs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Eric Campbell",
+  "license": "MIT"
+}

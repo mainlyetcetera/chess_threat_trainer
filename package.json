@@ -4,8 +4,13 @@
   "description": "app to train chess players on seeing atks and defs",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "prepare": "husky install"
   },
   "author": "Eric Campbell",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "husky": "^7.0.0",
+    "jest": "^27.2.5"
+  }
 }

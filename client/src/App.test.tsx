@@ -1,11 +1,12 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import App from './App';
+import Board from './components/Board';
 
 describe('can use describe (duh...)', () => {
-  test('renders first test element', () => {
+  test('renders a board', () => {
     render(<App />);
-    const testElement = screen.getByText(/find this/i);
-    expect(testElement).toBeInTheDocument();
+    const board = screen.getByText(/reached board/i);
+    expect(board).toBeInTheDocument();
   });
 });

@@ -1,12 +1,8 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import ReactDOM from 'react-dom';
+import ReactTestUtils, { act } from 'react-dom/test-utils';
 import App from './App';
-import Board from './components/Board';
 
 describe('can use describe (duh...)', () => {
-  test('renders a board', () => {
-    render(<App />);
-    const board = screen.getByText(/reached board/i);
-    expect(board).toBeInTheDocument();
-  });
+  test.todo('something about app')
 });

@@ -4,7 +4,7 @@ import './App.css';
 
 function App() {
   return (
-    <Board />
+    <Board infoToStart={false} />
   );
 }
 

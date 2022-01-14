@@ -1,7 +1,13 @@
-import React from 'react'
+import React, { useState }  from 'react';
 
-export default class Info extends React.Component {
-  render() {
-    return <h3>Found Info</h3>
-  }
+type InfoProps = {
+  info: string;
 }
+
+const Info = (props: InfoProps): JSX.Element => {
+  const [info, setInfo] = useState(props.info)
+
+  return <h3>{ info }</h3>;
+};
+
+export default Info

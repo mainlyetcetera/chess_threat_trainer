@@ -6,14 +6,13 @@ type BoardProps = {
   infoToStart: boolean;
 }
 
-// class Board extends Component<BoardProps, BoardState> {
 const Board = ({ infoToStart }: BoardProps): JSX.Element =>  {
   const [showInfo, setShowInfo] = useState(infoToStart)
 
   return (
     <div>
       <Chessboard />
-      { showInfo && <Info /> }
+      { showInfo && <Info info={'anime cat girl'}/> }
     </div>
   )
 }

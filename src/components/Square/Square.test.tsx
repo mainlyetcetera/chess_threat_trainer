@@ -5,41 +5,65 @@ import { CustomSquareRenderer } from "./Square";
     let square: RenderResult;
     let playerC3: HTMLElement;
     let opponentC3: HTMLElement;
+    let playerC6: HTMLElement;
 
-    beforeEach(async () => {
-        square = render(<CustomSquareRenderer 
-	    children={<></>}
-	    square='c3'
-	    squareColor="white"
-	    style={{}}
-	/>);
+    describe('c3', () => {
+	beforeEach(async () => {
+	    square = render(<CustomSquareRenderer 
+		children={<></>}
+		square='c3'
+		squareColor="white"
+		style={{}}
+	    />);
 
-	playerC3 = screen.getByTestId('pl_threat_c3');
-	opponentC3 = screen.getByTestId('opp_threat_c3');
+	    playerC3 = screen.getByTestId('pl_threat_c3');
+	    opponentC3 = screen.getByTestId('opp_threat_c3');
+	});
+
+	// beforeAll(() => screen.debug(playerC3));
+
+	it('should exist', () => {
+	    expect(square).toBeTruthy();
+	})
+
+	it('renders a square', async () => {
+	    expect(playerC3).toBeInTheDocument();
+	});
+
+	it('renders player\'s threat counts at starting board, assuming player is white, on c3', async () => {
+	    expect(playerC3.textContent).toMatch(/\b3\b/);
+	});
+
+	it('renders opponent\'s threat counts at starting board, assuming player is white, on c3', async () => {
+	    expect(opponentC3.textContent).toMatch(/\b0\b/);
+	});
     });
 
-    // beforeAll(() => screen.debug(playerC3));
+    describe('c6', () => {
+	beforeEach(async () => {
+	    square = render(<CustomSquareRenderer 
+		children={<></>}
+		square='c6'
+		squareColor="white"
+		style={{}}
+	    />);
 
-    it('should exist', () => {
-        expect(square).toBeTruthy();
-    })
+	    playerC6 = screen.getByTestId('pl_threat_c6');
+	});
 
-    it('renders a square', async () => {
-        expect(playerC3).toBeTruthy();
-    });
+	it('should exist', () => {
+	    expect(square).toBeTruthy();
+	})
 
-    it('renders player\'s threat counts at starting board, assuming player is white, on c3', async () => {
-        expect(playerC3.textContent).toMatch(/\b3\b/);
-    });
+	it('renders a square', async () => {
+	    expect(playerC6).toBeInTheDocument();
+	});
 
-    it('renders opponent\'s threat counts at starting board, assuming player is white, on c3', async () => {
-        expect(opponentC3.textContent).toMatch(/\b0\b/);
-    });
+	it('renders player\'s threat counts at starting board, assuming player is white, on c6', async () => {
+	    // screen.debug();
+	    expect(playerC6.textContent).toMatch(/\b0\b/);
+	});
 
-    // TODO: next
-    // this is probably ready for a commit...
-    it.skip('renders player\'s threat counts at starting board, assuming player is white, on c6', async () => {
-        expect(playerC3.textContent).toMatch(/\b0\b/);
     });
 
  })

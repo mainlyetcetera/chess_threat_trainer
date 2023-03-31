@@ -1,0 +1,23 @@
+version: '3'
+services:
+  client:
+    restart: on-failure
+    build:
+      dockerfile: Dockerfile
+      context: .
+    volumes:
+      # - ./node_modules/typescript:/app/node_modules/typescript
+      # - ./node_modules/@types:/app/node_modules/@types
+      # - /app/node_modules
+      - .:/app
+    ports:
+      - 3000:3000
+  tests:
+    restart: on-failure
+    build:
+      dockerfile: Dockerfile
+      context: .
+    volumes:
+      - /app/node_modules
+      - .:/app
+    command: ["npm", "run", "test"]

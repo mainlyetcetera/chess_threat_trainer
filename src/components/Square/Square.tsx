@@ -105,9 +105,9 @@ const CustomSquareRenderer = forwardRef<HTMLDivElement, CustomSquareProps>((prop
 	    0
 	</div>
         <div
-	      data-testid={`${playerTestId}`}
+	    data-testid={`${playerTestId}`}
 	>
-	      {playerTestId === 'pl_threat_c3' ? '3' : '0'}
+	    {playerTestId === 'pl_threat_c3' ? '3' : '0'}
 	</div>
       </div>
     </div>

@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import './App.css';
-import { Board } from './components/Board/Board'
-import { Chess } from 'chess.js'
+import React, { useState } from "react";
+import "./App.css";
+import { Board } from "./components/Board/Board";
+import { Chess } from "chess.js";
 
 function App() {
   const [g, setG] = useState(new Chess());
@@ -12,7 +12,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <>
-            <Board />
+          <Board />
         </>
       </header>
     </div>

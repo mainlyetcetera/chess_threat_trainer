@@ -6,8 +6,9 @@ dotenv.config();
 
 const app: Express = express();
 const port = process.env.PORT;
+const c = new Chess();
 
-app.get('/', (req: Request, res: Response) => {
+app.get('/', (_: Request, res: Response) => {
     console.log('what is here?', new Chess());
 
     res.send('Express + TypeScript Server');
@@ -15,4 +16,7 @@ app.get('/', (req: Request, res: Response) => {
 
 app.listen(port, () => {
     console.log(`⚡️[server]: Server is running at http://localhost:${port}`);
+
+    // c.moves shows valid moves for this turn (so white's turn)
+    console.log(c.moves());
 });

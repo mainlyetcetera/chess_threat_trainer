@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import "./App.css";
 import { Board } from "./components/Board/Board";
-import { Chess } from "chess.js";
+// import { Chess } from "chess.js";
 
 function App() {
-  const [g, setG] = useState(new Chess());
+  // const [g, setG] = useState(new Chess());
 
-  console.log({ g });
+  // console.log({ g });
 
   return (
     <div className="App">

@@ -1,0 +1,12 @@
+version: '3'
+services:
+  chess_worker:
+    restart: on-failure
+    build:
+      dockerfile: Dockerfile
+      context: ./chess_worker
+    volumes:
+      # - /app/node_modules
+      - ./chess_worker:/app
+    ports:
+      - 5000:5000

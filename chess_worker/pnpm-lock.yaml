@@ -1,6 +1,9 @@
 lockfileVersion: '6.0'
 
 dependencies:
+  chess.js:
+    specifier: 1.0.0-beta.5
+    version: 1.0.0-beta.5
   dotenv:
     specifier: ^16.0.3
     version: 16.0.3
@@ -9,6 +12,9 @@ dependencies:
     version: 4.18.2
 
 devDependencies:
+  '@types/chess.js':
+    specifier: ^0.13.4
+    version: 0.13.4
   '@types/express':
     specifier: ^4.17.17
     version: 4.17.17
@@ -71,6 +77,10 @@ packages:
     dependencies:
       '@types/connect': 3.4.35
       '@types/node': 18.15.12
+    dev: true
+
+  /@types/chess.js@0.13.4:
+    resolution: {integrity: sha512-rPmTVffnepx/TVe9ZzOf8bXxyCkYQ+h+VTSiI4JKjoKWzCFkPgPRJL7Cz15qslksOcVGEYCPYLbG0NLO4yzbrg==}
     dev: true
 
   /@types/connect@3.4.35:
@@ -180,6 +190,10 @@ packages:
     dependencies:
       function-bind: 1.1.1
       get-intrinsic: 1.2.0
+    dev: false
+
+  /chess.js@1.0.0-beta.5:
+    resolution: {integrity: sha512-ZmSBraFoGrLCiC7m5vwPax02KoKFjC+3uQrlDYKoORUi8MY+7qceDXQW1ho0Gt6pylGCzTTTBa6gy55bOXp2Jw==}
     dev: false
 
   /config-chain@1.1.13:

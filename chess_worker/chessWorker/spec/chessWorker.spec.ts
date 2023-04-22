@@ -1,9 +1,11 @@
-describe('the chess worker', () => {
-  let w: null;
+import { getNextMoveThreat } from '../chessWorker';
 
-  beforeAll(() => {
-    w = null;
-  });
+describe('the chess worker', () => {
+    let w: any;
+
+    beforeAll(() => {
+        w = getNextMoveThreat;
+    });
 
     it('can run a test', () => {
         expect(true).toBe(true);

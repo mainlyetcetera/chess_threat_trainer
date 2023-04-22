@@ -7,11 +7,13 @@ describe('the chess worker', () => {
         w = getNextMoveThreat;
     });
 
-    it('can run a test', () => {
-        expect(true).toBe(true);
-    });
-
     it('exists', () => {
         expect(w).toBeTruthy();
+    });
+
+    describe('get next move threat', () => {
+        it('gives a map of the threats possible for the next move', () => {
+            expect(w()).toHaveProperty('a3', 2);
+        });
     });
 });

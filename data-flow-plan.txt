@@ -1,0 +1,26 @@
+client hits server for:
+  get all threats for board
+    /threats
+  get all threats for one side
+    so white or black
+    /threats/white
+  get all threats for a square
+    also can be one side
+    /threats/c3/white
+  get all pieces threatening a square
+    can be per side
+    /pieces/c3/white
+
+client translates server's info into:
+  threat counts on board
+
+worker:
+  builds threat info
+    for whole board
+    /board
+    for a square
+    /c3
+    for a piece
+    <- not 100% sure about this endpoint yet
+
+server gets worker's results, returns them in endpoints

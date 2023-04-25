@@ -1,19 +1,38 @@
-import { getNextMoveThreat } from '../chessWorker';
+import { determinePiece, getNextMoveThreat } from '../chessWorker';
 
 describe('the chess worker', () => {
-    let w: any;
+    describe('determine piece', () => {
+        let d: typeof determinePiece;
 
-    beforeAll(() => {
-        w = getNextMoveThreat;
+        beforeAll(() => {
+            d = determinePiece;
+        });
+
+        it('exists', () => {
+            expect(d).toBeTruthy();
+        });
+
+        it('determines a piece from a move', () => {
+            expect(d('Na3')).toBe('N');
+            expect(d('a3')).toBe('p');
+        });
+
     });
-
-    it('exists', () => {
-        expect(w).toBeTruthy();
-    });
-
     describe('get next move threat', () => {
+        let w: typeof getNextMoveThreat;
+
+        beforeAll(() => {
+            w = getNextMoveThreat;
+        });
+
+        it('exists', () => {
+            expect(w).toBeTruthy();
+        });
+
         it('gives a map of the threats possible for the next move', () => {
-            expect(w()).toHaveProperty('a3', 2);
+            const actual = w();
+            console.log({ actual });
+            expect(actual).toHaveProperty('a3', ['p', 'N']);
         });
     });
 });

@@ -1,11 +1,20 @@
 version: '3'
 services:
-  tests:
+  chess_worker:
     restart: on-failure
     build:
       dockerfile: Dockerfile
-      context: .
+      context: ./chess_worker
     volumes:
       - /app/node_modules
-      - .:/app
-    command: ["npm", "run", "test"]
+      - ./chess_worker:/app
+    command: ["pnpm", "run", "test:develop"]
+  serv:
+    restart: on-failure
+    build:
+      dockerfile: Dockerfile.test.dev
+      context: ./serv
+    volumes:
+      - /app/node_modules
+      - ./serv:/app
+    command: ["pnpm", "run", "test:develop"]

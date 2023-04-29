@@ -1,16 +1,6 @@
-// import { getNextMoveThreat } from '../chessWorker/chessWorker';
-// import { ThreatMap } from '../types/types';
-
+import { getNextMoveThreat } from '../chessWorker/chessWorker';
 import { Request, Response } from 'express';
 
-// function getMap(): ThreatMap { 
-//     return getNextMoveThreat();
-// }
-
-const getMap = (_: Request, res: Response) => { 
-    console.log('still calling get map');
-    res.send('hitting get map');
-    // res.json();
-}
+const getMap = (_: Request, res: Response) => res.send(getNextMoveThreat());
 
 export { getMap };

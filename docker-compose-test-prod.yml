@@ -8,7 +8,7 @@ services:
     volumes:
       - /app/node_modules
       - ./chess_worker:/app
-    command: ["pnpm", "run", "test:develop"]
+    command: ["pnpm", "run", "test:prod"]
   serv:
     restart: on-failure
     build:
@@ -19,4 +19,4 @@ services:
       - ./serv:/app
     depends_on:
       - chess_worker
-    command: ["pnpm", "run", "test:develop"]
+    command: ["pnpm", "run", "test:prod"]

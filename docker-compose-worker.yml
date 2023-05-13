@@ -5,6 +5,8 @@ services:
     build:
       dockerfile: Dockerfile
       context: ./chess_worker
+    ports:
+      - 5000:5000
     volumes:
       - ./chess_worker:/app
-    command: ["pnpm", "run", "test:develop"]
+    command: ["pnpm", "run", "dev"]

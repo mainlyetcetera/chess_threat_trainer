@@ -22,7 +22,17 @@ services:
       - ./chess_worker:/app
     ports:
       - 5000:5000
-  tests:
+  serv:
+    restart: on-failure
+    build:
+      dockerfile: Dockerfile
+      context: ./serv
+    volumes:
+      - /app/node_modules
+      - ./serv:/app
+    ports:
+      - 6942:6942
+  test_client:
     restart: on-failure
     build:
       dockerfile: Dockerfile
@@ -30,6 +40,22 @@ services:
     volumes:
       - /app/node_modules
       - ./client:/app
-    depends_on:
-      - chess_worker
     command: ["npm", "run", "test"]
+  test_cw:
+    restart: on-failure
+    build:
+      dockerfile: Dockerfile
+      context: ./chess_worker
+    volumes:
+      - /app/node_modules
+      - ./chess_worker:/app
+    command: ["pnpm", "run", "test:prod"]
+  test_serv:
+    restart: on-failure
+    build:
+      dockerfile: Dockerfile
+      context: ./serv
+    volumes:
+      - /app/node_modules
+      - ./serv:/app
+    command: ["pnpm", "run", "test:prod"]

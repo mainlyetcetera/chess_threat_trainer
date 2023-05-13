@@ -18,6 +18,7 @@ describe('the chess worker', () => {
         });
 
     });
+
     describe('get next move threat', () => {
         let w: typeof getNextMoveThreat;
 

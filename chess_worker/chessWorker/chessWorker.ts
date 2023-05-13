@@ -1,11 +1,5 @@
-import { Chess, Square, PieceSymbol } from 'chess.js';
-
-type MajorPiece = 'N' | 'B' | 'R' | 'Q' | 'K';
-type CorrectPieceSymbol = Uppercase<Exclude<PieceSymbol, 'p'>> | 'p';
-type PieceInMoveNotation = Uppercase<Exclude<PieceSymbol, 'p'>> | PawnNotation;
-type PotentialMove = `${PieceInMoveNotation}${Square}`;
-type PawnNotation = '';
-type ThreatMap = { [k in Square]?: CorrectPieceSymbol[] };
+import { Chess } from 'chess.js';
+import { MajorPiece, CorrectPieceSymbol, PotentialMove, ThreatMap, Square } from '../types/types';
 
 const c = new Chess();
 

@@ -1,0 +1,11 @@
+version: '3'
+services:
+  serv:
+    restart: on-failure
+    build:
+      dockerfile: Dockerfile.test.dev
+      context: ./serv
+    volumes:
+      - /app/node_modules
+      - ./serv:/app
+    command: ["pnpm", "run", "test:develop"]

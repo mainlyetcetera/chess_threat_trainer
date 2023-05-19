@@ -1,0 +1,12 @@
+version: '3'
+services:
+  serv:
+    restart: on-failure
+    build:
+      dockerfile: Dockerfile
+      context: .
+    volumes:
+      - /app/node_modules
+      - .:/app
+    ports:
+      - 6943:6943

@@ -1,12 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import "./App.css";
 import { Board } from "./components/Board/Board";
-// import { Chess } from "chess.js";
 
 function App() {
-  // const [g, setG] = useState(new Chess());
-
-  // console.log({ g });
+  useEffect(() => {
+	  const m = async () => {
+		  const d = await fetch('http://localhost:6942/map');
+		  const r = await d.json();
+		  console.log({ r });
+		  return r;
+	  }
+	  m();
+  }, []);
 
   return (
     <div className="App">
